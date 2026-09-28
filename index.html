@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#0b5cab">
+
+    <title>
+        Smart Basket QR Scanner
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- QR Scanner -->
+    <script
+        src="https://unpkg.com/html5-qrcode"
+        defer>
+    </script>
+
+</head>
+
+
+<body>
+
+<header class="app-header">
+
+    <div>
+
+        <div class="app-title">
+            SMART BASKET TRACKER
+        </div>
+
+        <div class="app-subtitle">
+            By DIPROM
+        </div>
+
+    </div>
+
+
+    <button
+        id="logoutButton"
+        class="btn-logout">
+
+        Logout
+
+    </button>
+
+</header>
+
+
+<main class="scanner-container">
+
+
+    <!-- Employee -->
+
+    <section class="employee-card">
+
+        <div>
+
+            <small>
+                Logged in as
+            </small>
+
+            <strong id="employeeName">
+                -
+            </strong>
+
+        </div>
+
+        <div>
+
+            <small>
+                Team
+            </small>
+
+            <strong id="employeeTeam">
+                -
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- Production Input -->
+
+    <section class="card">
+
+        <h2>
+            Production Information
+        </h2>
+
+
+        <div class="form-group">
+
+            <label>
+                Station *
+            </label>
+
+            <select
+                id="station"
+                required>
+
+                <option value="">
+                    -- Select Station --
+                </option>
+
+                <option value="Raw Material">
+                    Raw Material
+                </option>
+
+                <option value="Washing">
+                    Washing
+                </option>
+
+                <option value="Cutting">
+                    Cutting
+                </option>
+
+                <option value="Cooking">
+                    Cooking
+                </option>
+
+                <option value="Cooling">
+                    Cooling
+                </option>
+
+                <option value="Packing">
+                    Packing
+                </option>
+
+                <option value="Shipping">
+                    Shipping
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Action *
+            </label>
+
+            <select
+                id="action"
+                required>
+
+                <option value="">
+                    -- Select Action --
+                </option>
+
+                <option value="In">
+                    In
+                </option>
+
+                <option value="Out">
+                    Out
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Weight (kg) *
+            </label>
+
+            <input
+                type="number"
+                id="weight"
+                min="0"
+                step="0.01"
+                placeholder="Enter weight"
+                required
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- Scanner -->
+
+    <section class="card">
+
+        <h2>
+            Scan Basket QR
+        </h2>
+
+
+        <div
+            id="scanner">
+
+        </div>
+
+
+        <button
+            id="startScanner"
+            class="btn-primary">
+
+            📷 Start Scanner
+
+        </button>
+
+
+        <button
+            id="stopScanner"
+            class="btn-secondary"
+            style="display:none;">
+
+            Stop Scanner
+
+        </button>
+
+
+        <div
+            id="scannerMessage"
+            class="message">
+
+        </div>
+
+    </section>
+
+
+    <!-- Basket Result -->
+
+    <section
+        id="basketResult"
+        class="card basket-result"
+        style="display:none;">
+
+        <h2>
+            Basket Information
+        </h2>
+
+
+        <div class="result-grid">
+
+            <div>
+                <span>
+                    Basket ID
+                </span>
+
+                <strong id="resultBasketId">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Status
+                </span>
+
+                <strong id="resultStatus">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Location
+                </span>
+
+                <strong id="resultLocation">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Previous Weight
+                </span>
+
+                <strong id="resultPreviousWeight">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Current Weight
+                </span>
+
+                <strong id="resultCurrentWeight">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Weight Loss
+                </span>
+
+                <strong id="resultWeightLoss">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Yield
+                </span>
+
+                <strong id="resultYield">
+                    -
+                </strong>
+            </div>
+
+
+            <div>
+                <span>
+                    Process Time
+                </span>
+
+                <strong id="resultProcessTime">
+                    -
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div
+            id="processWarning"
+            class="process-warning">
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    SMART BASKET TRACKER By DIPROM
+
+</footer>
+
+
+<script
+    src="scanner.js">
+</script>
+
+</body>
+
+</html>
