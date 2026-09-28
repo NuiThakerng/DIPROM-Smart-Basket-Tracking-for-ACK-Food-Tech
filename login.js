@@ -4,7 +4,7 @@
 ************************************************/
 
 const WEBAPP_URL =
-    "ใส่ URL Google Apps Script /exec ของคุณตรงนี้";
+    "https://script.google.com/macros/s/AKfycbx24B1tWuPuMCEbAXaNG92WGT4ffLlPWYvXzjBKv6N12pAbsqsT87ekVPxS2OX9e-mMWA/exec";
 
 
 const loginForm =
